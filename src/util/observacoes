@@ -1,0 +1,155 @@
+Para quando for usar EOF
+
+Exemplo Java:
+
+Scanner input;
+
+while (input.hasNext()) {
+    int n = input.nextShort();
+}
+
+InputStreamReader ir = new InputStreamReader(System.in);
+BufferedReader in = new BufferedReader(ir);
+
+while ((str = in.readLine()) != null) {
+    //codigo
+}
+
+-------------------
+
+Para valores muito grandes
+
+Exemplo C:
+
+unsigned long long int p;
+
+scanf("%llu", p);
+
+-------------------
+
+Variaveis em Java
+
+byte = 1 byte - 8 bits = -128-127 - números inteiros
+short = 2 bytes - 16 bits = -32768 a +32767 - números inteiros
+int = 4 bytes - 32 bits = -2147483648 a + 2147483647 - números inteiros
+long = 8 bytes - 64 bits = -922337203685477808 a 922337203685477807 - números inteiros
+float = 4 bytes - 32 bits = aproximadamente 3.40282347E+38 = Ponto flutuante
+double = 8bytes - 64 bits = 1.79769313486231570W+308 = Ponto Flutuante
+chart = Caracteres Unicode 16 bits = 0 a 65536 = caracteres
+booleann = Possuem valores True e false = booleano
+
+-------------------
+
+Quando for ler String  com espaco
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+InputStreamReader ir = new InputStreamReader(System.in);
+BufferedReader in = new BufferedReader(ir);
+
+int A, B, X;
+
+A = Integer.parseInt(in.readLine());
+B = Integer.parseInt(in.readLine());
+
+-------------------
+
+CONVERSORES
+
+Converter String em Date:
+
+SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+date = (Date) sdf.parse("23/08/2017");
+
+vetor de char em String:
+
+char[] t;
+String teste = String.copyValueOf(t);
+
+Decimal em binario:
+
+int i = 4
+String str = Integer.toBinaryString(i);
+
+Binario em decimal:
+
+int binario = Integer.parseInt(str, 2);
+
+-------------------
+
+O for each usa os iterators. É através dele que ele faz a iteração.
+
+Não há nenhum benefício em usar o iterator diretamente hoje em dia, a menos 
+que você queira excluir elementos da sua coleção enquanto itera. Por exemplo, 
+excluir todos os "Vinicius" da lista:
+
+Iterator<String> it = lista.iterator();
+while (it.hasNext()) {
+   String nome = it.next();
+   if ("Vinícius".equals(nome)) {
+      it.remove(); //Remove o elemento
+   }
+}
+
+-------------------
+
+//Se existir caracter que nãos seja dígito retornará false
+public boolean comparaDigitosRegExp(String digitos){  
+    Pattern p = Pattern.compile("^[0-9]+$");
+    Matcher m = p.matcher(digitos);
+    return m.matches();
+}
+
+(?i) - Ignora maiúsculas de minúsculas.
+(?m) - Trabalha com multilinhas.
+(?s) - Faz com que o caractere encontre novas linhas.
+(?x) - Permite inclusão de espaços e comentários.
+
+boolean sobreNome = "Silveira".matches("(?i)silveira");
+System.out.println("Retorno = "+sobreNome);
+
+Para saber se contem um determinado caracter na String use o indexOf
+Para saber quantos contem use o for com charAt().
+
+-------------------
+
+Verifica se tem um caracter na string | qual posicao esta o caracter
+
+String s = "Hello World";  
+if(s.indexOf("d") != -1){ //Se for diferente de -1 é pq existe o caracter.  
+    System.out.println (c);  
+}
+
+String s = "Hello World!";
+char c = 'd';
+for (int i = 0; i < s.length(); i++) {
+  if (s.charAt(i) == c) {//Ivai pegar a string "Hello World!" e vai procurar o char "d" nessa String.
+    System.out.println (c);
+  }
+}
+
+-------------------
+
+Operador condicional ternario
+
+if (a > 0)
+   b = 1;
+else
+   b = 2;
+
+b = (a > 0) ? 1 : 2;
+
+-------------------
+
+Isso irá substituir todos os 0's do início da string.
+
+variavel.replaceFirst("0*", "")
+
+-------------------
+
+Ordena uma lista
+
+String C = new String[x];
+Arrays.sort(C);
