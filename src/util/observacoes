@@ -153,3 +153,12 @@ Ordena uma lista
 
 String C = new String[x];
 Arrays.sort(C);
+
+-------------------
+
+olhar
+
+DecimalFormat df = new DecimalFormat("0.00");
+df.setMaximumFractionDigits(2);
+df.setGroupingUsed(false);
+df.setRoundingMode(RoundingMode.DOWN);
