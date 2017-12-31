@@ -162,3 +162,11 @@ DecimalFormat df = new DecimalFormat("0.00");
 df.setMaximumFractionDigits(2);
 df.setGroupingUsed(false);
 df.setRoundingMode(RoundingMode.DOWN);
+
+------
+
+matematica
+
+Math.floor(valor);
+
+se for um valor decimal retornal a parte inteira

@@ -15,8 +15,8 @@ public class Decifrando_a_Carta_Criptografada {
 
         while (true) {
 
-            C = Integer.parseInt(in.readLine());
-            N = Integer.parseInt(in.readLine());
+            C = in.read();
+            N = in.read();
 
             String cifra1M, cifra2M, cifra1m, cifra2m;
             String[] palavra = new String[N];

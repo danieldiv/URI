@@ -1,13 +1,9 @@
 package iniciante;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Scanner;
+import java.io.InputStreamReader;
 
-/**
- * IMPORTANT: O nome da classe deve ser "Main" para que a sua solução execute
- * Class name must be "Main" for your solution to execute El nombre de la clase
- * debe ser "Main" para que su solución ejecutar
- */
 /**
  * Padrao
  *
@@ -32,11 +28,13 @@ import java.util.Scanner;
  * : .--. | Q : --.- | R : .-. | S : ... | T : - | U : ..- | V : ...- | W : .--
  * | X : -..- | Y : -.-- | Z : --.. |
  */
-public class Morse_to_Texto {
+
+public class Morse {
 
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        Scanner sc2 = new Scanner(System.in);
+
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
 
         int t;
         String str;
@@ -44,21 +42,15 @@ public class Morse_to_Texto {
         String morse[] = {
             "-...", "b", "-.-.", "c", "..-.", "f", "....", "h", ".---", "j",
             ".-..", "l", ".--.", "p", "--.-", "q", "...-", "v", "-..-", "x",
-            "-.--", "y", "--..", "z",
-            "-..", "d", "--.", "g", "-.-", "k", "---", "o",
-            ".-.", "r", "...", "s", "..-", "u", ".--", "w",
-            ".-", "a", "..", "i", "--", "m", "-.", "n",
-            ".", "e", "-", "t",
+            "-.--", "y", "--..", "z", "-..", "d", "--.", "g", "-.-", "k",
+            "---", "o", ".-.", "r", "...", "s", "..-", "u", ".--", "w",
+            ".-", "a", "..", "i", "--", "m", "-.", "n", ".", "e", "-", "t",
             " ", " "};
-        
 
-        while ((t = sc.nextShort()) < 1 || t > 10) {
-        }
+        t = Integer.parseInt(in.readLine());
 
         for (int i = 0; i < t; i++) {
-
-            while ((str = sc2.nextLine()).length() > 1000) {
-            }
+            str = in.readLine();
 
             str = str.replace(".......", "*");
             str = str.replace("...", "#");
@@ -77,7 +69,6 @@ public class Morse_to_Texto {
             str = str.replace("[", "");
 
             System.out.println(str);
-
         }
     }
 }

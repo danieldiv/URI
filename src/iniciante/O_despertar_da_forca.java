@@ -1,10 +1,11 @@
 package iniciante;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class O_despertar_da_forca {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
 
         int n, m, x = 0, y = 0;
@@ -12,7 +13,7 @@ public class O_despertar_da_forca {
         n = sc.nextShort();
         m = sc.nextShort();
 
-        int[][] val = new int[m][m];
+        int[][] val = new int[n][m];
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
@@ -20,8 +21,8 @@ public class O_despertar_da_forca {
             }
         }
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
+        for (int i = 1; i < n - 1; i++) {
+            for (int j = 1; j < m - 1; j++) {
 
                 if ((val[i][j] == 42) && i > 0 && i < n - 1 && j > 0 && j < m - 1) {
 
@@ -36,7 +37,7 @@ public class O_despertar_da_forca {
                 }
             }
         }
-        
+
         System.out.println(x + " " + y);
     }
 }
