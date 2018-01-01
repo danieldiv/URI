@@ -170,3 +170,12 @@ matematica
 Math.floor(valor);
 
 se for um valor decimal retornal a parte inteira
+
+--------
+
+ADICIONAR CARACTER NA STRING
+
+String st = "teste";
+StringBuilder sb = new StringBuilder(st);
+sb.insert(posicao, caracter);
+System.out.println(sb.toString());
