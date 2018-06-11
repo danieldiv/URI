@@ -17,7 +17,7 @@ while ((str = in.readLine()) != null) {
 
 -------------------
 
-Para valores muito grandes
+PARA VALORES GRANDES
 
 Exemplo C:
 
@@ -27,7 +27,7 @@ scanf("%llu", p);
 
 -------------------
 
-Variaveis em Java
+(VARIAVEIS / OUTROS) EM JAVA
 
 byte = 1 byte - 8 bits = -128-127 - números inteiros
 short = 2 bytes - 16 bits = -32768 a +32767 - números inteiros
@@ -38,9 +38,11 @@ double = 8bytes - 64 bits = 1.79769313486231570W+308 = Ponto Flutuante
 chart = Caracteres Unicode 16 bits = 0 a 65536 = caracteres
 booleann = Possuem valores True e false = booleano
 
+\t = 8 espacos
+
 -------------------
 
-Quando for ler String  com espaco
+LER STRING COM ESPACO
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -132,7 +134,7 @@ for (int i = 0; i < s.length(); i++) {
 
 -------------------
 
-Operador condicional ternario
+OPERADOR CONDICIONAL TERNARIO
 
 if (a > 0)
    b = 1;
@@ -143,13 +145,13 @@ b = (a > 0) ? 1 : 2;
 
 -------------------
 
-Isso irá substituir todos os 0's do início da string.
+SUBSTITUIR TODOS OS 0's DO INICIO DA STRING
 
-variavel.replaceFirst("0*", "")
+variavel = variavel.replaceFirst("0*", "")
 
 -------------------
 
-Ordena uma lista
+ORDENA UMA LISTA
 
 String C = new String[x];
 Arrays.sort(C);
@@ -165,7 +167,7 @@ df.setRoundingMode(RoundingMode.DOWN);
 
 ------
 
-matematica
+MATEMATICA
 
 Math.floor(valor);
 
@@ -179,3 +181,80 @@ String st = "teste";
 StringBuilder sb = new StringBuilder(st);
 sb.insert(posicao, caracter);
 System.out.println(sb.toString());
+
+--------
+
+EXPRESSOES REGULARES
+
+[\\W] -> Para todos os caracteres
+[^0-9] -> Para todos os numeros
+[a-zA-Z\\s]+ -> Para todas a letras
+
+--------
+
+SPLIT
+
+String a = "Exemplo, de. separar- string+ por* carater";
+
+//Como quer todos os caracteres pode usar esta expressão regular:
+
+String[] parts = a.split("[\\W]");
+
+for(String i:parts){
+    System.out.println("===" +i);
+}
+
+run:
+===Exemplo
+===
+===de
+===
+===separar
+===
+===string
+===
+===por
+===
+===carater
+
+Para remover os espaços também deverá alterar esta linha de código:
+
+String[] parts = a.split("[\\W][ ]");
+Output:
+
+===Exemplo
+===de
+===separar
+===string
+===por
+===carater
+
+--------
+
+Não use pacotes nas submissões JAVA, só vão levar a erros de compilação
+Use a função trim() para ela retirar quaisquer espaços em brancos lidos 
+pelo método nextLine(). Ou eles vão fazer seu programa lançar
+ um NumberFormat Exception
+
+T = Integer.parseInt(scan.nextLine().trim());
+
+--------
+
+REMOVER ULTIMO CARACTER DA STRING
+
+String s = "Puxa vida, está vindo um lixo no fim da string*";
+if (s.length() > 0) {
+    s = s.substring (0, s.length() - 1);
+}
+
+--------
+
+TEMPO EM MILISIGUNDO DE UM METODO
+
+long tempoInicial = System.currentTimeMillis();
+.
+.
+.
+.
+ long tempoFinal = System.currentTimeMillis();
+ System.out.printf("%.3f ms%n", (tempoFinal - tempoInicial) / 1000d);

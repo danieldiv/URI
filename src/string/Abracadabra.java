@@ -20,10 +20,10 @@ public class Abracadabra {
                     System.out.print(" ");
                 }
 
-                for (int j = 0; j < tam - 1 - i; j++) {
+                for (int j = 0; j < tam - 1 - (i - 1); j++) {
                     System.out.print(s.charAt(j));
 
-                    if (j < s.length() - 1) {
+                    if (j < (tam - 2 - (i - 1))) {
                         System.out.print(" ");
                     }
                 }

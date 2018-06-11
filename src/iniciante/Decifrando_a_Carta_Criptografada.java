@@ -11,15 +11,22 @@ public class Decifrando_a_Carta_Criptografada {
         InputStreamReader ir = new InputStreamReader(System.in);
         BufferedReader in = new BufferedReader(ir);
 
-        int C, N;
+        String C, N;
+        int n;
 
         while (true) {
 
-            C = in.read();
-            N = in.read();
+            C = in.readLine();
+            N = in.readLine();
 
+            if (C == null || N == null) {
+                break;
+            }
+
+            System.out.println("N");
+            
             String cifra1M, cifra2M, cifra1m, cifra2m;
-            String[] palavra = new String[N];
+            String[] palavra = new String[Integer.valueOf(N)];
 
             cifra1M = in.readLine();
             cifra2M = in.readLine();
@@ -35,9 +42,10 @@ public class Decifrando_a_Carta_Criptografada {
             char[] c1m = cifra1m.toCharArray();
             char[] c2m = cifra2m.toCharArray();
 
-            for (int i = 0; i < N; i++) {
+            System.out.println("teste2");
+            for (int i = 0; i < Integer.parseInt(N); i++) {
                 palavra[i] = in.readLine();
-                System.out.println(decifrar(palavra[i], c1M, c2M, c1m, c2m));
+                System.out.println("teste: " + decifrar(palavra[i], c1M, c2M, c1m, c2m));
             }
             System.out.println();
         }

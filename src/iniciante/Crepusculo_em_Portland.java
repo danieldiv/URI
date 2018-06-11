@@ -7,61 +7,24 @@ public class Crepusculo_em_Portland {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int n, x, cont;
+        int N, M[][], i, j, cont;
 
-        while ((n = sc.nextInt()) < 1 || n > 100) {
-        }
+        N = sc.nextInt();
+        M = new int[N + 1][N + 1];
 
-        int[][] val = new int[n + 1][n + 1];
-        String[][] str = new String[n][n];
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                val[i][j] = sc.nextShort();
+        for (i = 0; i < N + 1; i++) {
+            for (j = 0; j < N + 1; j++) {
+                M[i][j] = sc.nextInt();
             }
         }
 
-        for (int i = 0; i < n + 1; i++) {
-            cont = 0;
-            for (int j = 0; j < n + 1; j++) {
-                if (i < n - 1 && j < n - 1) {
-                    if (val[i][j] == 1) {
-                        cont++;
-                    }
+        for (i = 0; i < N; i++) {
+            for (j = 0; j < N; j++) {
+                cont = M[i][j] + M[i][j + 1] + M[i + 1][j] + M[i + 1][j + 1];
 
-                    if (val[i][j + 1] == 1) {
-                        cont++;
-                    }
-
-                    if (val[i + 1][j] == 1) {
-                        cont++;
-                    }
-
-                    if (val[i + 1][j + 1] == 1) {
-                        cont++;
-                    }
-                }
-                x = i;
-
-                if (x < 0) {
-                    x++;
-                }
-
-                System.out.println("cont: " + cont);
-                if (cont >= 2) {
-                    System.out.println("a");
-                    str[i][j] = "S";
-                } else {
-                    System.out.println("b");
-                    str[i][j] = "U";
-                }
+                System.out.print((cont > 1) ? "S" : "U");
             }
-        }
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.println(str[i][j]);
-            }
+            System.out.println();
         }
     }
 }

@@ -11,7 +11,7 @@ public class Impar_Par_ou_Roubo {
         short p, j1, j2, r, a;
         int soma;
 
-        while (true) {
+//        while (true) {
             p = sc.nextShort();
             j1 = sc.nextShort();
             j2 = sc.nextShort();
@@ -35,13 +35,13 @@ public class Impar_Par_ou_Roubo {
                     if (r == 0) {
                         //acusacao
                         if (a == 0 || a == 1) {
-                            System.out.println("1");
+                            System.out.println("Jogador 1 ganha!");
                         }
                     } else if (r == 1) {
                         if (a == 1) {
-                            System.out.println("2");
+                            System.out.println("Jogador 2 ganha!");
                         } else {
-                            System.out.println("1");
+                            System.out.println("Jogador 1 ganha!");
                         }
                     }
                 } else if (soma % 2 == 1) {
@@ -49,13 +49,13 @@ public class Impar_Par_ou_Roubo {
                     if (r == 0) {
                         //acusacao
                         if (a == 0 || a == 1) {
-                            System.out.println("2");
+                            System.out.println("Jogador 2 ganha!");
                         }
                     } else if (r == 1) {
                         if (a == 0) {
-                            System.out.println("1");
+                            System.out.println("Jogador 1 ganha!");
                         } else {
-                            System.out.println("2");
+                            System.out.println("Jogador 2 ganha!");
                         }
                     }
                 }
@@ -66,15 +66,15 @@ public class Impar_Par_ou_Roubo {
                     if (r == 0) {
                         //acusacao
                         if (a == 0) {
-                            System.out.println("2");
+                            System.out.println("Jogador 2 ganha!");
                         } else {
-                            System.out.println("1");
+                            System.out.println("Jogador 1 ganha!");
                         }
                     } else if (r == 1) {
                         if (a == 1) {
-                            System.out.println("2");
+                            System.out.println("Jogador 2 ganha!");
                         } else {
-                            System.out.println("1");
+                            System.out.println("Jogador 1 ganha!");
                         }
                     }
                 } else if (soma % 2 == 1) {
@@ -82,17 +82,17 @@ public class Impar_Par_ou_Roubo {
                     if (r == 0) {
                         //acusacao
                         if (a == 0 || a == 1) {
-                            System.out.println("1");
+                            System.out.println("Jogador 1 ganha!");
                         }
                     } else if (r == 1) {
                         if (a == 0) {
-                            System.out.println("1");
+                            System.out.println("Jogador 1 ganha!");
                         } else {
-                            System.out.println("2");
+                            System.out.println("Jogador 2 ganha!");
                         }
                     }
                 }
-            }
+//            }
 
         }
     }
