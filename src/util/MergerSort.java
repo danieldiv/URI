@@ -5,10 +5,15 @@ import java.util.*;
 public class MergerSort {
 
     public static void main(String[] args) {
+        long tempoInicial = System.currentTimeMillis();
+
         Integer[] a = {3, 2, 2, 4, 5, 3, 3, 5, 1, 5};
 //        Integer[] a = {2, 6, 3, 5, 1};
         mergeSort(a);
         System.out.println(Arrays.toString(a));
+
+        long tempoFinal = System.currentTimeMillis();
+        System.out.printf("%.3f ms%n", (tempoFinal - tempoInicial) / 1000d);
     }
 
     public static void mergeSort(Comparable[] a) {
