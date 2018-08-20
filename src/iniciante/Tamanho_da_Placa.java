@@ -1,4 +1,4 @@
-package iniciante.entrada_saida;
+package iniciante;
 
 import java.io.IOException;
 import java.util.Scanner;

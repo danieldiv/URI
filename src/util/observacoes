@@ -1,3 +1,5 @@
+estudar algebra vetorial
+
 Para quando for usar EOF
 
 Exemplo Java:
@@ -12,6 +14,10 @@ InputStreamReader ir = new InputStreamReader(System.in);
 BufferedReader in = new BufferedReader(ir);
 
 while ((str = in.readLine()) != null) {
+    //codigo
+}
+
+while (in.ready)) {
     //codigo
 }
 
@@ -58,7 +64,7 @@ B = Integer.parseInt(in.readLine());
 
 -------------------
 
-CONVERSORES
+FORMAT
 
 Converter String em Date:
 
@@ -78,6 +84,11 @@ String str = Integer.toBinaryString(i);
 Binario em decimal:
 
 int binario = Integer.parseInt(str, 2);
+
+Formatar quantidade de caracteres
+
+x = String.format("teste %.6f", d);
+System.out.printf("\nConsumo medio: %.2f m3.\n", floor(100 * (float) consumo / morador) / 100); //sem arredondamento
 
 -------------------
 
@@ -173,6 +184,8 @@ Math.floor(valor);
 
 se for um valor decimal retornal a parte inteira
 
+an = a1 . qn-1 (PG)
+
 --------
 
 ADICIONAR CARACTER NA STRING
@@ -189,6 +202,7 @@ EXPRESSOES REGULARES
 [\\W] -> Para todos os caracteres
 [^0-9] -> Para todos os numeros
 [a-zA-Z\\s]+ -> Para todas a letras
+(\\w)\\1+ -> caracteres repetidos
 
 --------
 
@@ -258,3 +272,31 @@ long tempoInicial = System.currentTimeMillis();
 .
  long tempoFinal = System.currentTimeMillis();
  System.out.printf("%.3f ms%n", (tempoFinal - tempoInicial) / 1000d);
+
+--------
+
+BUSCA BINARIA
+
+Onde_Esta_o_Marmore.java
+
+--------
+
+RESUMOS
+
+for (int i = 0; i < N; i++) {
+    D[i] = V[i];
+}
+
+o mesmo que
+
+System.arraycopy(V, 0, D, 0, N);
+Collections.copy(destino, origem); 
+
+//OBS: o vetor destino deve possuir tam maior ou igual a origem
+
+--------
+
+INVERTE UMA STRING
+
+String S = "abc";
+String str = new StringBuffer(S).reverse().toString();

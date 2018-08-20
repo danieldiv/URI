@@ -1,29 +1,37 @@
 package estruturas_bibliotecas;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Scanner;
+import java.io.InputStreamReader;
 
 public class TDA_Racional {
 
-    static int N, N1, N2, D1, D2;
-    static String C1, O, C2;
+    static int N1, N2, D1, D2;
 
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
 
-        N = sc.nextInt();
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N;
+
+        String X, V[];
+
+        N = Integer.parseInt(in.readLine());
 
         for (int i = 0; i < N; i++) {
-            N1 = sc.nextInt();
-            C1 = sc.next();
-            D1 = sc.nextInt();
-            O = sc.next();
-            N2 = sc.nextInt();
-            C2 = sc.next();
-            D2 = sc.nextInt();
+            X = in.readLine();
 
-            result(O);
+            V = X.split(" ");
+
+            N1 = Integer.parseInt(V[0]);
+            N2 = Integer.parseInt(V[4]);
+            D1 = Integer.parseInt(V[2]);
+            D2 = Integer.parseInt(V[6]);
+
+            result(V[3]);
         }
+
     }
 
     public static int result(String o) {
@@ -51,16 +59,16 @@ public class TDA_Racional {
 
         System.out.print(v1 + "/" + v2 + " = ");
 
-        if (spf(v1, v2) != 0) {
-            System.out.println(v1 / v2);
-        } else {
+        if (v1 % v2 == 0) {
+            System.out.println((v1 / v2) + "/" + (v2 / v2));
+        } else if (simplificar(v1, v2) == 0) {
             System.out.println(N1 + "/" + N2);
-        }
 
+        }
         return 0;
     }
 
-    public static int spf(int a, int b) {
+    public static int simplificar(int a, int b) {
         int cont = 0;
 
         if (a % b == 0) {
