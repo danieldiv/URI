@@ -1,32 +1,28 @@
 package iniciante.entrada_saida;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Scanner;
+import java.io.InputStreamReader;
 
 public class Entrada_e_Saida_6 {
 
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
 
-        double N;
-        float t;
-        int I, D;
-        String S;
+        String S, A[];
+        int X, Y;
 
-        while (sc.hasNext()) {
-            t = sc.nextFloat();
-//            N = sc.nextDouble();
+        S = in.readLine();
 
-            S = String.valueOf(t);
-            S = S.substring(S.length() - 3, S.length());
-
-            I = (int) t;
-
-            System.out.println("s: " + S);
-            System.out.println("i: " + I);
-//            D = Integer.parseInt(S);
-
-//            System.out.println(D + "," + I);
+        if (!S.contains(".")) {
+            S += ".0";
         }
+
+        A = S.split("[.]");
+        X = Integer.parseInt(A[1]);
+        Y = Integer.parseInt(A[0]);
+
+        System.out.println(X + "." + Y);
     }
 }

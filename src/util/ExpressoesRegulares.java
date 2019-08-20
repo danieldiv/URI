@@ -13,6 +13,7 @@ public class ExpressoesRegulares {
         // \w - caracteres de palavras a-z A-Z digitos e _ 
         // \W - tudo o que nao for caracter de palavra 
         // [] - agrupamento de expressoes (a-z A-Z 0-9 0[xX][0-9a-fA-F])
+        // !#$%&'()*+,-./:;?@[\\\\]_`{|}~ -> caracteres especiais
         //
         // QUANTIFICADORES
         //
@@ -36,6 +37,7 @@ public class ExpressoesRegulares {
 //        System.out.println("email valido: " + "#@abrao@mail.br".matches(regex));
 //        String regex = "\\d{2}/\\d{2}/\\d{2,4}";//\\d\\d/\\d\\d/\\d\\d\\d\\d
 //        String texto = "05/10/2010 05/05/2015 1/1/01 01/05/95";//dd/MM/yyyy
+
         String regex = "proj([^,])";
         String texto = "proj1.bkp, proj1.java, proj1.class proj1final.java, proj2.bkp, proj3.java, diagrama, texto";
 

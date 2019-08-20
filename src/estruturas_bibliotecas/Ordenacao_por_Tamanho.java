@@ -7,6 +7,12 @@ import java.util.Arrays;
 
 public class Ordenacao_por_Tamanho {
 
+    /**
+     * ordena um array pelo tamanho das strings
+     *
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
 
         InputStreamReader ir = new InputStreamReader(System.in);
